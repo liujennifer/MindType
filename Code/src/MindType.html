@@ -301,12 +301,6 @@ for loop the phrase (function)
     }
 
 
-
-
-
-
-
-
       ReactDOM.render(<App />, document.getElementById('root'));
 
       var row1 = document.getElementsByClassName('row1');
@@ -324,6 +318,8 @@ for loop the phrase (function)
       var col6 = document.getElementsByClassName('col6');
       var cols = [col1, col2, col3, col4, col5, col6];
 
+      var rowCol = [row1, row2, row3, row4, row5, col1, col2, col3, col4, col5, col6];
+
       var iteration = 0;
       var rowFound = false;
       var colFound = false;
@@ -332,6 +328,47 @@ for loop the phrase (function)
 
       var interval = setInterval(writePhrase, 200);
       function writePhrase(){
+        if (iteration == statement.length){
+          clearInterval(interval);
+        } else {
+          for (var j = 0; j < prev.length; j++){
+            prev[j].style.backgroundColor = '#3da8c4';
+            prev[j].style.color = 'white';
+          }
+
+          var index = Math.floor(Math.random() * rowCol.length);
+          var rc = rowCol[index];
+          prev = rc;
+          rowCol.splice(index, 1);
+          for (var j = 0; j < rc.length; j++){
+            rc[j].style.backgroundColor = 'white';
+            rc[j].style.color = '#3da8c4';
+            if (rc[j].innerHTML == statement[iteration]){
+              if (rows.includes(rc)){
+                rowFound = true;
+              } else {
+                colFound = true;
+              }
+            }
+            if (statement[iteration] == ' ' && rc == row5){
+              rowFound = true;
+            }
+            if (statement[iteration] == ' ' && rc == col1){
+              colFound = true;
+            }
+          }
+
+          if (rowFound == true && colFound == true){
+            rowFound = false;
+            colFound = false;
+            rowCol = [row1, row2, row3, row4, row5, col1, col2, col3, col4, col5, col6];
+            displayText += statement[iteration];
+            document.getElementsByClassName('display')[0].value = displayText;
+            iteration++;
+          }
+
+        }
+        /*
         if (iteration == statement.length){
           clearInterval(interval);
         } else {
@@ -377,6 +414,7 @@ for loop the phrase (function)
             iteration++;
           }
         }
+        */
       }
 
       </script>
