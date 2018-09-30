@@ -5,122 +5,118 @@
   <meta charset='utf-8'>
   <!--<link rel="stylesheet" href="style.css">-->
   <style>
-
     body {
-      overflow:hidden;
+      overflow: hidden;
     }
 
-    #root{
+    #root {
       height: 100vh;
       width: 99vw;
     }
 
-      .suggestion{
-        width: 33vw;
-        height: 12.5vh;
+      .suggestion {
+        width:            33vw;
+        height:           12.5vh;
         background-color: #3da8c4;
-        color: white;
-        font-size: 2.5vmin;
+        color:            white;
+        font-size:        2.5vmin;
         /* font-weight: bold; */
-        font-family: Tahoma, Arial, Helvetica, sans-serif;
-        border-width: 2px 2px 2px 0px;
-        border-style: solid;
-        border-color: white;
+        font-family:      Tahoma, Arial, Helvetica, sans-serif;
+        border-width:     2px 2px 2px 0px;
+        border-style:     solid;
+        border-color:     white;
       }
 
-      .suggestions{
+      .suggestions {
         margin-top: 1vh;
       }
 
       .resume {
-        width: 48vw;
+        width:       48vw;
         margin-left: 2vw;
-        height: 5vh;
+        height:      5vh;
       }
 
       .display {
-        width: 48vw;
+        width:  48vw;
         height: 5vh;
       }
 
-      .entry{
-        width: 16.5vw;
-        height: 12.5vh;
+      .entry {
+        width:            16.5vw;
+        height:           12.5vh;
         background-color: #3da8c4;
-        color: white;
-        font-size: 4vmin;
+        color:            white;
+        font-size:        4vmin;
         /* font-weight: bold; */
-        font-family: Tahoma, Arial, Helvetica, sans-serif;
+        font-family:      Tahoma, Arial, Helvetica, sans-serif;
         /* border: 2px solid white; */
-        border: none;
+        border:           none;
       }
 
-      .entry-extra-wide{
-        width: 33vw;
-        height: 12.5vh;
+      .entry-extra-wide {
+        width:            33vw;
+        height:           12.5vh;
         background-color: #3da8c4;
-        color: white;
-        font-size: 4vmin;
+        color:            white;
+        font-size:        4vmin;
         /* font-weight: bold; */
-        font-family: Tahoma, Arial, Helvetica, sans-serif;
+        font-family:      Tahoma, Arial, Helvetica, sans-serif;
         /* border: 2px solid white; */
-        border: none;
+        border:           none;
       }
 
-      .entry-wide{
-        width: 19.8vw;
-        height: 12.5vh;
+      .entry-wide {
+        width:            19.8vw;
+        height:           12.5vh;
         background-color: #3da8c4;
-        color:white;
-        font-size: 4vmin;
+        color:            white;
+        font-size:        4vmin;
         /* font-weight: bold; */
-        font-family: Tahoma, Arial, Helvetica, sans-serif;
+        font-family:      Tahoma, Arial, Helvetica, sans-serif;
         /* border: 2px solid white; */
-        border: none;
+        border:           none;
       }
 
-      .userInput, .options{
+      .userInput, .options {
         margin-top: 1vh;
       }
 
-      .option{
-        width: 19.8vw;
-        height: 12.5vh;
+      .option {
+        width:            19.8vw;
+        height:           12.5vh;
         background-color: #3da8c4;
-        color: white;
-        font-size: 4vmin;
+        color:            white;
+        font-size:        4vmin;
         /* font-weight: bold; */
-        font-family: Tahoma, Arial, Helvetica, sans-serif;
+        font-family:      Tahoma, Arial, Helvetica, sans-serif;
         /* border: 2px solid white; */
-        border: none;
+        border:           none;
       }
-
-
     </style>
+
   <script src="https://unpkg.com/react@15/dist/react.min.js"> </script>
-  <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js">
-  </script>
-  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"> </script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
 </head>
 
 <body>
   <div id="root"></div>
   <script type="text/babel">
-
     var statement = prompt('What would you like to type?');
       var displayText = '';
-
       class App extends React.Component {
 
         //var simulation = confirm('Would you like to start the simulation?')
         //var type = prompt('What would you like to type?');
 
         constructor(props) {
-        super(props);
-        this.state = {display: 'letters', type:statement, displayText: displayText};
-        this.handleNumClick = this.handleNumClick.bind(this);
-        this.handleEmojiClick = this.handleEmojiClick.bind(this);
-        this.handleLetterClick = this.handleLetterClick.bind(this);
+          super(props);
+
+          this.state = {display: 'letters', type: statement, displayText: displayText};
+          this.handleNumClick = this.handleNumClick.bind(this);
+          this.handleEmojiClick = this.handleEmojiClick.bind(this);
+          this.handleLetterClick = this.handleLetterClick.bind(this);
         }
 
         handleNumClick() {
@@ -134,7 +130,6 @@
         handleLetterClick(){
           this.setState({display: 'letters'});
         }
-
 
 /*
 get phrase from user
@@ -151,11 +146,11 @@ for loop the phrase (function)
           let element;
           let button2;
           let button3;
-          if (this.state.display === 'letters'){
+          if (this.state.display === 'letters') {
             element = <Letters />;
             button2 = <button onClick={this.handleNumClick} className="option">0</button>
             button3 = <button onClick={this.handleEmojiClick} className="option">:)</button>
-          } else if (this.state.display === 'numbers'){
+          } else if (this.state.display === 'numbers') {
             element = <Numbers />;
             button2 = <button onClick={this.handleLetterClick} className="option">abc</button>
             button3 = <button onClick={this.handleEmojiClick} className="option">:)</button>
@@ -165,38 +160,35 @@ for loop the phrase (function)
             button3 = <button onClick={this.handleLetterClick} className="option">abc</button>
           }
 
-
-             return (
-               <div>
-                 <input type="text" className="display" value={this.state.displayText}></input>
-                 <button className="resume">Resume</button>
-                 <div className="suggestions">
-                    <button className="suggestion">To</button>
-                    <button className="suggestion">That</button>
-                    <button className="suggestion">The</button>
-                 </div>
-                 {element}
-                 <div className="options">
-                    <button className="option">.</button>
-                    {button2}
-                    {button3}
-                    <button className="option">&crarr;</button>
-                    <button className="option">&#8678;</button>
-                 </div>
+           return (
+             <div>
+               <input type="text" className="display" value={this.state.displayText}></input>
+               <button className="resume">Resume</button>
+               <div className="suggestions">
+                  <button className="suggestion">To</button>
+                  <button className="suggestion">That</button>
+                  <button className="suggestion">The</button>
                </div>
+               {element}
+               <div className="options">
+                  <button className="option">.</button>
+                  {button2}
+                  {button3}
+                  <button className="option">&crarr;</button>
+                  <button className="option">&#8678;</button>
+               </div>
+             </div>
             )
         }
     }
 
     class Letters extends React.Component {
-
-      constructor(props){
+      constructor(props) {
         super(props);
         this.state = {type: statement};
       }
 
-
-      render(){
+      render() {
         return (
           <div className="userInput">
              <button className="entry row1 col1">a</button>
@@ -230,12 +222,10 @@ for loop the phrase (function)
              <button className="entry-extra-wide row5 col1">____</button>
              <button className="entry row5 col3">y</button>
              <button className="entry row5 col4">z</button>
-             <button className="entry-extra-wide row5 col5">&uarr;</button>
-
+             <button className="entry-extra-wide row5 col6">&uarr;</button>
           </div>
         )
       }
-
     }
 
     class Numbers extends React.Component {
@@ -253,17 +243,16 @@ for loop the phrase (function)
              <button className="entry-wide">7</button>
              <button className="entry-wide">8</button>
              <button className="entry-wide">9</button>
-
           </div>
         )
       }
     }
 
-    // create Emoiji component
+    // create Emoji component
     // https://coolsymbol.com/emojis/emoji-for-copy-and-paste.html
 
     class Emojis extends React.Component {
-      render(){
+      render() {
         return (
           <div className="userInput">
              <button className="entry">😄</button>
@@ -293,19 +282,10 @@ for loop the phrase (function)
              <button className="entry">🎅</button>
              <button className="entry">❤️️</button>
              <button className="entry">💔</button>
-
-
           </div>
         )
       }
     }
-
-
-
-
-
-
-
 
       ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -319,7 +299,7 @@ for loop the phrase (function)
       var col1 = document.getElementsByClassName('col1');
       var col2 = document.getElementsByClassName('col2');
       var col3 = document.getElementsByClassName('col3');
-      var col4 = document.getElementsByClassName('co14');
+      var col4 = document.getElementsByClassName('col4');
       var col5 = document.getElementsByClassName('col5');
       var col6 = document.getElementsByClassName('col6');
       var cols = [col1, col2, col3, col4, col5, col6];
@@ -331,7 +311,7 @@ for loop the phrase (function)
       var prev = rows[0];
 
       var interval = setInterval(writePhrase, 200);
-      function writePhrase(){
+      function writePhrase() {
         if (iteration == statement.length){
           clearInterval(interval);
         } else {
@@ -341,6 +321,7 @@ for loop the phrase (function)
           }
 
           var rc = Math.floor((Math.random() * 2) + 1);
+
           if (rc == 1){
             var row = rows[Math.floor((Math.random() * 5))];
             prev = row;
@@ -354,7 +335,9 @@ for loop the phrase (function)
                 rowFound = true;
               }
             }
-          } else {
+          }
+
+          else {
             var col = cols[Math.floor((Math.random() * 6))];
             prev = col;
             for (var j = 0; j < col.length; j++){
@@ -379,7 +362,7 @@ for loop the phrase (function)
         }
       }
 
-      </script>
+    </script>
 </body>
 
 </html>
