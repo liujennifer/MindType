@@ -1,0 +1,123 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+  width: 99vw;
+}
+
+.suggestion {
+  width: 33vw;
+  height: 12.5vh;
+  background-color: #3da8c4;
+  color: white;
+  font-size: 2.5vmin;
+  /* font-weight: bold; */
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  border-width: 2px 2px 2px 0px;
+  border-style: solid;
+  border-color: white;
+}
+
+.suggestions {
+  margin-top: 1vh;
+}
+
+.resume {
+  width: 48vw;
+  margin-left: 2vw;
+  height: 5vh;
+}
+
+.display {
+  width: 48vw;
+  height: 5vh;
+}
+
+.entry {
+  width: 16.5vw;
+  height: 12.5vh;
+  background-color: #3da8c4;
+  color: white;
+  font-size: 4vmin;
+  /* font-weight: bold; */
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  /* border: 2px solid white; */
+  border: none;
+}
+
+.entry-extra-wide {
+  width: 33vw;
+  height: 12.5vh;
+  background-color: #3da8c4;
+  color: white;
+  font-size: 4vmin;
+  /* font-weight: bold; */
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  /* border: 2px solid white; */
+  border: none;
+}
+
+.entry-wide {
+  width: 19.8vw;
+  height: 12.5vh;
+  background-color: #3da8c4;
+  color: white;
+  font-size: 4vmin;
+  /* font-weight: bold; */
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  /* border: 2px solid white; */
+  border: none;
+}
+
+.userInput,
+.options {
+  margin-top: 1vh;
+}
+
+.option {
+  width: 19.8vw;
+  height: 12.5vh;
+  background-color: #3da8c4;
+  color: white;
+  font-size: 4vmin;
+  /* font-weight: bold; */
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  /* border: 2px solid white; */
+  border: none;
+}
